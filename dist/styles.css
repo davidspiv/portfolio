@@ -1,8 +1,8 @@
-@layer reset, layout, util, theme;
+@layer reset, base, components, theme;
 
 @import "reset.css" layer(reset);
 
-@layer layout {
+@layer base {
   * {
     --small-gap: clamp(0.5rem, 1.5vw, 1.1rem);
     --gap: clamp(0.8rem, 1.7vw, 2.1rem);
@@ -22,6 +22,32 @@
     height: calc(var(--header-height) * 1.2);
   }
 
+  main {
+    margin: var(--big-gap) 0;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  button {
+    height: 3.5rem;
+    width: 3.5rem;
+    cursor: pointer;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+
+  .active {
+    display: block;
+  }
+}
+
+@layer components {
   .content-wrapper {
     margin: 0 auto;
     padding: 0 var(--gap);
@@ -37,16 +63,6 @@
     padding: 0 var(--big-gap);
   }
 
-  main {
-    margin: var(--big-gap) 0;
-  }
-
-  .card {
-    margin-bottom: var(--header-height);
-    padding: var(--small-gap);
-    border-radius: 1.2rem;
-  }
-
   header nav {
     display: none;
     position: absolute;
@@ -54,16 +70,26 @@
     top: 10rem;
   }
 
+  nav ul {
+    flex-direction: row;
+  }
+
   .logo p {
     display: block;
   }
 
-  /* .animate {
-    transition-duration: 0.15s;
-  } */
+  section {
+    margin-bottom: var(--bigger-gap);
+    padding: var(--small-gap);
+    border-radius: 1.2rem;
+  }
 
-  .active {
-    display: block;
+  .card {
+    margin-bottom: var(--bigger-gap);
+  }
+
+  .card:last-child {
+    margin-bottom: 0;
   }
 
   @media (min-width: 720px) {
@@ -76,30 +102,13 @@
       position: static;
     }
 
-    header ul {
+    nav ul {
       display: flex;
+      flex-direction: row;
       align-items: center;
       justify-content: space-between;
       gap: var(--big-gap);
     }
-  }
-}
-
-@layer util {
-  strong {
-    font-weight: 600;
-  }
-
-  button {
-    height: 3.5rem;
-    width: 3.5rem;
-    cursor: pointer;
-  }
-
-  ul {
-    display: flex;
-    flex-direction: row;
-    gap: var(--gap);
   }
 }
 
@@ -119,7 +128,7 @@
     font-size: clamp(2.2rem, 2vw + 1.25rem, 2.7rem);
   }
 
-  .card {
+  section {
     background-color: #424864;
   }
 
