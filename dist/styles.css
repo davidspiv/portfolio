@@ -1,4 +1,4 @@
-@layer reset, layout, theme;
+@layer reset, layout, util, theme;
 
 @import "reset.css" layer(reset);
 
@@ -47,16 +47,15 @@
     border-radius: 1.2rem;
   }
 
-  button {
-    height: 3.5rem;
-    width: 3.5rem;
-  }
-
   header nav {
     display: none;
     position: absolute;
     right: 5rem;
     top: 10rem;
+  }
+
+  .logo p {
+    display: block;
   }
 
   /* .animate {
@@ -86,6 +85,24 @@
   }
 }
 
+@layer util {
+  strong {
+    font-weight: 600;
+  }
+
+  button {
+    height: 3.5rem;
+    width: 3.5rem;
+    cursor: pointer;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+  }
+}
+
 @layer theme {
   :root {
     font-family: Montserrat, Georgia, "Times New Roman", Times, serif;
@@ -98,7 +115,7 @@
   h4,
   h5,
   h6,
-  #logo p:first-child {
+  .logo p:first-child {
     font-size: clamp(2.2rem, 2vw + 1.25rem, 2.7rem);
   }
 
