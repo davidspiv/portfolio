@@ -1,18 +1,9 @@
-function init() {
-  const buttons = document.querySelectorAll("button");
-  const navUl = document.querySelector("nav ul");
+const button = document.querySelector("button");
+const nav = document.querySelector("nav");
 
-  for (let button of buttons) {
-    button.addEventListener("click", onClick());
+button.addEventListener("click", function (e) {
+  const buttonId = e.target.id;
+  if (buttonId === "hamburger") {
+    nav.classList.toggle("active");
   }
-
-  function onClick(e) {
-    const button = e.target.id;
-    if (button === "hamburger") {
-      console.log("hamburger working");
-    }
-  }
-  console.log("init test");
-}
-
-init();
+});

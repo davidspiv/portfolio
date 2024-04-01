@@ -1,13 +1,9 @@
-@layer reset, layout, components, theme;
+@layer reset, layout, theme;
 
 @import "reset.css" layer(reset);
 
 @layer layout {
   * {
-    /* TIME */
-    --def-transition-duration: 0.15s;
-
-    /* LENGTH */
     --small-gap: clamp(0.5rem, 1.5vw, 1.1rem);
     --gap: clamp(0.8rem, 1.7vw, 2.1rem);
     --big-gap: clamp(1.8rem, calc(1.7vw + 1rem), 3.1rem);
@@ -47,6 +43,8 @@
 
   .card {
     margin-bottom: var(--header-height);
+    padding: var(--small-gap);
+    border-radius: 1.2rem;
   }
 
   button {
@@ -61,11 +59,19 @@
     top: 10rem;
   }
 
+  /* .animate {
+    transition-duration: 0.15s;
+  } */
+
   .active {
     display: block;
   }
 
   @media (min-width: 720px) {
+    #hamburger {
+      display: none;
+    }
+
     header nav {
       display: block;
       position: static;
@@ -75,8 +81,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: var(--small-gap);
-      gap: var(--small-gap);
+      gap: var(--big-gap);
     }
   }
 }
@@ -110,7 +115,7 @@
   }
 
   #hamburger {
-    background-image: url("/svg-icons/hamburger.svg");
+    background-image: url("/dist/svg-icons/hamburger.svg");
     background-repeat: no-repeat;
   }
 }
