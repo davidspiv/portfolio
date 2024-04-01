@@ -1,0 +1,116 @@
+@layer reset, layout, components, theme;
+
+@import "reset.css" layer(reset);
+
+@layer layout {
+  * {
+    /* TIME */
+    --def-transition-duration: 0.15s;
+
+    /* LENGTH */
+    --small-gap: clamp(0.5rem, 1.5vw, 1.1rem);
+    --gap: clamp(0.8rem, 1.7vw, 2.1rem);
+    --big-gap: clamp(1.8rem, calc(1.7vw + 1rem), 3.1rem);
+    --bigger-gap: calc(var(--header-height) / 2);
+    --header-height: clamp(8rem, calc(5vw + 4rem), 11rem);
+  }
+
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  header,
+  footer {
+    height: calc(var(--header-height) * 1.2);
+  }
+
+  .content-wrapper {
+    margin: 0 auto;
+    padding: 0 var(--gap);
+    width: 100%;
+    max-width: 1200px;
+    height: inherit;
+  }
+
+  header .content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--big-gap);
+  }
+
+  main {
+    margin: var(--big-gap) 0;
+  }
+
+  .card {
+    margin-bottom: var(--header-height);
+  }
+
+  button {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+
+  header nav {
+    display: none;
+    position: absolute;
+    right: 5rem;
+    top: 10rem;
+  }
+
+  .active {
+    display: block;
+  }
+
+  @media (min-width: 720px) {
+    header nav {
+      display: block;
+      position: static;
+    }
+
+    header ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--small-gap);
+      gap: var(--small-gap);
+    }
+  }
+}
+
+@layer theme {
+  :root {
+    font-family: Montserrat, Georgia, "Times New Roman", Times, serif;
+    scroll-behavior: smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  #logo p:first-child {
+    font-size: clamp(2.2rem, 2vw + 1.25rem, 2.7rem);
+  }
+
+  .card {
+    background-color: #424864;
+  }
+
+  button {
+    opacity: 0.8;
+  }
+
+  button:hover {
+    opacity: 1;
+  }
+
+  #hamburger {
+    background-image: url("/svg-icons/hamburger.svg");
+    background-repeat: no-repeat;
+  }
+}
