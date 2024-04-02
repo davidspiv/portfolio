@@ -1,6 +1,7 @@
 @layer reset, base, components, theme;
 
 @import "reset.css" layer(reset);
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 @layer base {
   * {
@@ -11,6 +12,12 @@
     --header-height: clamp(8rem, calc(5vw + 4rem), 11rem);
   }
 
+  :root {
+    font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif;
+    text-wrap: pretty;
+    scroll-behavior: smooth;
+  }
+
   html,
   body {
     width: 100%;
@@ -19,11 +26,24 @@
 
   header,
   footer {
-    height: calc(var(--header-height) * 1.2);
+    padding: var(--gap);
   }
 
   main {
-    margin: var(--big-gap) 0;
+    margin: var(--bigger-gap) 0;
+  }
+
+  h1,
+  h2,
+  .logo p:first-child {
+    font-size: clamp(2.2rem, 1.75vw + 1.25rem, 2.7rem);
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: clamp(1.8rem, 1.75vw + 1.2rem, 2.3rem);
   }
 
   strong {
@@ -86,18 +106,15 @@
 
   section {
     margin-bottom: var(--bigger-gap);
-    padding: var(--small-gap);
+    padding: var(--bigger-gap) var(--gap);
     border-radius: 1.2rem;
     margin-bottom: var(--bigger-gap);
   }
 
-  /* .card {
-    margin-bottom: var(--bigger-gap);
+  section h2 {
+    margin-bottom: var(--gap);
+    text-align: center;
   }
-
-  .card:last-child {
-    margin-bottom: 0;
-  } */
 
   @media (min-width: 720px) {
     #hamburger {
@@ -114,31 +131,21 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      gap: var(--big-gap);
+      gap: var(--bigger-gap);
     }
   }
 }
 
 @layer theme {
-  :root {
-    font-family: Montserrat, Georgia, "Times New Roman", Times, serif;
-    scroll-behavior: smooth;
+  header {
+    background-color: #d8ad98;
+    border-bottom: 1.5px solid #a48474;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  .logo p:first-child {
-    font-size: clamp(2.2rem, 2vw + 1.25rem, 2.7rem);
-  }
-
-  section {
+  /* section {
     background-color: #dfe5ff;
     border: 1.5px solid #424864;
-  }
+  } */
 
   button {
     opacity: 0.8;
@@ -146,6 +153,10 @@
 
   button:hover {
     opacity: 1;
+  }
+
+  header a:hover {
+    color: #d85838;
   }
 
   #hamburger {
