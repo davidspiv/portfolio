@@ -35,7 +35,7 @@
 
   h1,
   h2,
-  .logo p:first-child {
+  #logo p:first-child {
     font-size: clamp(2.2rem, 1.75vw + 1.25rem, 2.7rem);
   }
 
@@ -83,7 +83,8 @@
   }
 
   header .content-wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: 25% auto;
     align-items: center;
     justify-content: space-between;
     padding: 0 var(--big-gap);
@@ -100,7 +101,7 @@
     flex-direction: row;
   }
 
-  .logo p {
+  #logo p {
     display: block;
   }
 
@@ -138,6 +139,7 @@
 
 @layer theme {
   header {
+    position: relative;
     background-color: #d8ad98;
     border-bottom: 1.5px solid #a48474;
   }
@@ -158,6 +160,14 @@
   header a:hover {
     color: #d85838;
   }
+
+  /* #logo {
+    width: calc(var(--header-height) * 1.75);
+    min-height: 100%;
+    background-image: url("./svg-icons/logo.svg");
+    background-repeat: no-repeat;
+    background-size: 95%;
+  } */
 
   #hamburger {
     background-image: url("/dist/svg-icons/hamburger.svg");
