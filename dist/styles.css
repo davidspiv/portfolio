@@ -198,4 +198,10 @@
     background-image: url("/dist/svg-icons/hamburger.svg");
     background-repeat: no-repeat;
   }
+
+  canvas {
+    position: absolute;
+    top: 0;
+    background: transparent !important;
+  }
 }
