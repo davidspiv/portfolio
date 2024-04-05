@@ -4,7 +4,7 @@ const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 
 const windowX = window.innerWidth;
 const windowY = window.innerHeight;
-const bodyX = 10;
+const bodyX = 120;
 
 const engine = Engine.create();
 // engine.world.Gravity.y = 0;
@@ -32,10 +32,11 @@ export const addBall = (posX, posY) => {
   //   const img = new Image();
   //   img.src = "./svg-icons/wuu2yeiw.bmp";
 
-  const ballRadius = Math.min(bodyX, bodyX) / 4;
-  const ball = Bodies.circle(posX, posY, ballRadius, {
-    label: "ball",
+  const rectangleX = bodyX;
+  const ball = Bodies.rectangle(posX, posY, rectangleX, rectangleX, {
+    label: "rectangle",
     render: {
+      fillStyle: "blue",
       sprite: { texture: "./svg-icons/wuu2yeiw.bmp", xScale: 0.1, yScale: 0.1 },
     },
   });
