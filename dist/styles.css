@@ -117,7 +117,7 @@
     text-align: center;
   }
 
-  .logo-layer-1 {
+  /* .logo-layer-1 {
     transform: translate3d(12rem, 0, 0);
   }
   .logo-layer-2 {
@@ -128,7 +128,7 @@
   }
   .logo-layer-4 {
     transform: translate3d(12rem, 0, 0);
-  }
+  } */
 
   .animate {
     transition-property: transform;
@@ -184,24 +184,5 @@
 
   header a:hover {
     color: #d85838;
-  }
-
-  /* #logo {
-    width: calc(var(--header-height) * 1.75);
-    min-height: 100%;
-    background-image: url("./svg-icons/logo.svg");
-    background-repeat: no-repeat;
-    background-size: 95%;
-  } */
-
-  #hamburger {
-    background-image: url("/dist/svg-icons/hamburger.svg");
-    background-repeat: no-repeat;
-  }
-
-  canvas {
-    position: absolute;
-    top: 0;
-    background: transparent !important;
   }
 }
