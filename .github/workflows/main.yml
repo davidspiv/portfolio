@@ -2,6 +2,12 @@ name: CI
 
 on: [push]
 
+env:
+  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+  REMOTE_USER: ${{ secrets.REMOTE_USER }}
+  TARGET: ${{ secrets.REMOTE_TARGET }}
+
 jobs:
   build:
 
