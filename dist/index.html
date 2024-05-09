@@ -3,107 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Home</title>
   </head>
   <body>
     <header>
       <div class="content-wrapper">
-        <div id="logo">
-          <p>David Spivack</p>
-          <p>Web Developer!</p>
-        </div>
+        <button id="hamburger"></button>
         <nav>
           <ul>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#projects">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#section-journey">Journey</a></li>
+            <li>
+              <a href="#section-projects">Projects</a>
+            </li>
+            <li><a href="#section-about">About</a></li>
+            <li><a href="#section-contact">Contact</a></li>
           </ul>
         </nav>
-        <button id="hamburger"></button>
+        <div id="logo">
+          <p>David Spivack</p>
+          <p>Web Developer</p>
+        </div>
       </div>
     </header>
     <main>
       <div class="content-wrapper">
-        <section id="journey">
-          <h2>Journey</h2>
-          <article class="card">
-            <p>
-              My coding journey began in 2020 when I created an Autohotkey
-              script that added the control + a / select all shortcut to
-              Quickbooks Desktop. From there, I began utilizing Javascript in
-              the Google Workspace ecosystem to extend Sheets. At the time, I
-              worked for a small business in the home impovment industry as an
-              operations manager. These early projects enabled me to catch user
-              error and disseminate relevant information to accounting, the
-              designer, and the customer effectively. The below two examples
-              illustrate the types of solutions I deployed.
-            </p>
-            <ul>
-              <li>
-                <strong>Sheets to Calendar</strong>: Navigating and transferring
-                data between the QB, Calendar, and Sheets UI is slow and
-                mistake-prone. I created an AHK script to pull CSV reports from
-                QB for manual manipulation. I could then choose which line items
-                to edit and upload to a shared calendar. This solution
-                eliminated simple human error when transferring lots of similar
-                dates and skus repeatedly.
-              </li>
-              <li>
-                <strong>Margin Calculator</strong>: Determining a final
-                price/sqft for a product can be tricky, especially while
-                negotiating with a customer. Vendor-specific surcharges,
-                shipping, material type, and customer tier all need to be
-                factored into the final markup. I created a simple calulator UI
-                with AHK that makes it simple for salespeople to determine a
-                fair, but profitable price quickly.
-              </li>
-            </ul>
-            <p>
-              I began learning web development full time starting January 2024.
-            </p>
-          </article>
+        <section id="section-journey">
+          <h2>Coding Journey</h2>
+          <p>
+            Born out of an unhealthy obsession to fixate on small problems, my
+            coding journey started in early 2020. At the time, I worked in sales
+            and operations for a small business in the home improvement
+            industry. I became frustrated with the lack of a ``ctrl + a`` /
+            "select all" shortcut in our POS system that was nearly ubiquitous
+            in other software. Searching online, I was pleasantly surprised with
+            the number of people who were bothered by relatively minor things
+            like keyboard shortcuts, and how that community made the solution
+            simple and accessible. This was in direct contrast to the
+            watered-down support of professional software tools I was using on a
+            daily basis. Empowered by my findings, I immediately began
+            copy-pasting code from Stack Overflow and breaking things. Although
+            ignorance proved no obstacle for me, I eventually employed
+            successful solutions to a number of problems.
+          </p>
+          <h3>Early Solutions</h3>
+          <ul>
+            <li>
+              <strong>Sheets to Calendar</strong>: Navigating / transferring
+              data between QuickBooks desktop and the Google ecosystem via the
+              UI is slow and mistake-prone. I created an AHK (AutoHotkey) script
+              to pull CSV reports from QuickBooks to Sheets for manual
+              manipulation. Purchase orders could then be added in groups or by
+              line item to Google Calendar. This solution eliminated simple
+              human error when manually transferring dates and SKUs repeatedly.
+            </li>
+            <li>
+              <strong>Margin Calculator</strong>: Determining a final price/sqft
+              for a product can be tricky, especially while negotiating with a
+              customer. Vendor-specific surcharges, shipping, material type, and
+              customer “tier” are essential to factor into the final price when
+              selling in a competitive market. I created a calculator using AHK
+              that allows the user to input the variables above and see a table
+              of prices aligned with tiered margins. The program was designed to
+              sit on top of any price books referenced in the browser, making it
+              simple for salespeople to determine a fair, but profitable price
+              quickly.
+            </li>
+          </ul>
         </section>
-        <section id="projects">
+        <section id="section-projects">
           <h2>Projects</h2>
-          <article class="card">
-            <h3>Songbird 52</h3>
-            <ul>
-              <li>
-                <strong>Goal</strong>: A static webpage advertising local, solo
-                guitar performance.
-              </li>
-              <li>
-                <strong>Outlier Issue</strong>: The media the client provided
-                was hosted on Facebook and the client's profile was not relevent
-                to his business. I migrated them off Facebook and hosted them in
-                an Amazon S3 bucket.
-              </li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Web Docs</h3>
+          <article id="article-songbird">
+            <h3>songbird52.com</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Reiciendis animi perspiciatis veritatis, natus dolore quas
-              provident et tempore ducimus! Architecto est hic ex, a fugiat
-              tenetur ducimus vel accusamus esse!
+              A static webpage advertising local, solo guitar performance. The
+              media the client provided was hosted on Facebook and the client's
+              profile was not relevant to his business. I migrated them off
+              Facebook and hosted them in an Amazon S3 bucket.
             </p>
           </article>
+          <article id="article-web-docs">
+            <h3>davidspiv.com</h3>
+          </article>
+          <article id="article-infra-solutions">
+            <h3>Infrastructure Solutions</h3>
+          </article>
         </section>
-        <section id="about">
+        <section id="section-about">
           <h2>About</h2>
-          <article class="card"></article>
         </section>
-        <section id="contact">
+        <section id="section-contact">
           <h2>Contact</h2>
-          <article class="card"></article>
         </section>
       </div>
     </main>
-    <!-- <script src="index.js"></script>
-    <script src="matter.js" type="module"></script>
-    <script src="click.js" type="module"></script> -->
   </body>
 </html>
