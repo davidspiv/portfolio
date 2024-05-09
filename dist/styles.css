@@ -11,8 +11,8 @@
       --bigger-gap: calc(var(--header-height) / 2);
       --header-height: clamp(8rem, calc(5vw + 4rem), 11rem);
 
-      --variable-font-big: font-size: clamp(2.2rem, 1.75vw + 1.25rem, 2.7rem);
-      --variable-font-small: font-size: clamp(1.8rem, 1.75vw + 1.2rem, 2.3rem);
+      --variable-font-big: clamp(2.2rem, 1.75vw + 1.25rem, 2.7rem);
+      --variable-font-small: clamp(1.8rem, 1.75vw + 1.2rem, 2.3rem);
     }
 
     html {
@@ -21,21 +21,13 @@
       scroll-behavior: smooth;
     }
 
-    html,
-    body {
-      width: 100%;
-      overflow-x: hidden;
+    h2 {
+      font-size: var(--variable-font-big);
+      text-align: center;
     }
 
-    /* https://typescale.com/ */
-    h2 {
-      font-size: 2.488rem;
-    }
     h3 {
-      font-size: 2.074rem;
-    }
-    h4 {
-      font-size: 1.44rem;
+      font-size: var(--variable-font-small);
     }
 
     strong {
@@ -43,18 +35,37 @@
     }
 
     button {
-      height: 3.5rem;
-      width: 3.5rem;
       cursor: pointer;
     }
   }
   @layer layout {
+    html,
+    body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
     .content-wrapper {
       margin: 0 auto;
       padding: 0 var(--gap);
       width: 100%;
       max-width: 1200px;
       height: inherit;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr 80% 1fr;
+      align-items: center;
+      text-align: center;
+    }
+
+    #logo {
+      grid-column: 2;
+    }
+
+    p {
+      margin: var(--small-gap);
     }
 
     ul {
@@ -64,8 +75,9 @@
       margin: var(--small-gap);
     }
 
-    p {
-      margin: var(--small-gap);
+    button {
+      height: 3.5rem;
+      width: 3.5rem;
     }
   }
 }
@@ -75,14 +87,24 @@
     display: block;
   }
 
-
+  nav {
+    display: none;
+  }
 
   @media (min-width: 720px) {
     #hamburger {
       display: none;
     }
+
+    nav {
+      display: inline-block;
+    }
   }
 }
 
 @layer theme {
+  body {
+    background-color: #181a1b;
+    color: #e8e6e3;
+  }
 }
